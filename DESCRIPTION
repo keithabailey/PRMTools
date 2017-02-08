@@ -1,0 +1,10 @@
+Package: PRMTools
+Title: A set of useful tools maintained in one package for ease of updating and installing
+Version: 0.0.0.9000
+Authors@R: person("Keith", "Bailey", email = "keith_bailey@acl.com", role = c("aut", "cre"))
+Description: A set of useful tools maintained in one package for ease of updating and installing
+Depends: R (>= 3.3.1)
+License: Not For Public Consumption
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
