@@ -1,7 +1,6 @@
 #' Add new fiscal information fields to a dataframe
 #'
-#' This function will return a dataframe with fiscal period information added
-#' It will only accept valid date fields (date, POSIXct, POSIXlt)
+#' This function will return a dataframe with fiscal period information added. It will only accept valid date fields (date, POSIXct, POSIXlt)
 #' @param df dataframe you want add information to
 #' @param date_col field on which all calculations will be made
 #' @export
@@ -13,10 +12,16 @@
 #' createddate_col_year
 #' createddate_col_year_qtr
 #' createddate_col_month_end
-require(lubridate)
+
 
 #add various periods we are interestd.
 add_periods<-function(df, date_col) {
+
+  if (!requireNamespace("lubridate", quietly = TRUE)) {
+    stop("lubridate needed for this function to work. Please install it.",
+         call. = FALSE)
+  }
+  library(lubridate)
 
   date_col_name<-date_col
   date_col<-paste("^",date_col,"$",sep="")

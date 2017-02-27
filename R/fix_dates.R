@@ -9,6 +9,13 @@
 #' fix_dates(myydataframe)
 
 fix_dates<-function(df, format="%Y-%m-%d %H:%M:%S", date_search="date"){
+  if (!requireNamespace("lubridate", quietly = TRUE)) {
+    stop("lubridate needed for this function to work. Please install it.",
+         call. = FALSE)
+  }
+  library(lubridate)
+
+
   df[,grep(date_search,
            colnames(df))] <- lapply(df[,grep("date",
                                              colnames(df))],
