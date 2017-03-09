@@ -17,7 +17,7 @@ fix_dates<-function(df, format="%Y-%m-%d %H:%M:%S", date_search="date"){
 
 
   df[,grep(date_search,
-           colnames(df))] <- lapply(df[,grep("date",
+           colnames(df))] <- lapply(df[,grep(date_search,
                                              colnames(df))],
                                     fast_strptime,
                                     format = format,
